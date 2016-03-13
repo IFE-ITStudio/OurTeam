@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IFE-ITStudio</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="main-bg">
+		<div class="info-contain">
+			<!--个人名片位置-->
+		</div>
+		<div class="menu">
+			<!--菜单位置-->
+		</div>
+		<div class="screen-head"></div>
+		<div class="plane"></div>
+		<div class="cookie"></div>
+		<div class="book"></div>
+		<div class="camera"></div>
+		<div class="glasses"></div>
+		<div class="brushes"></div>
+	</div>
+
+	<script>
+		(function setWH(){
+			if (window.innerHeight) 
+				winHeight = window.innerHeight; 
+			else if ((document.body) && (document.body.clientHeight)) 
+				winHeight = document.body.clientHeight; 
+
+			if (window.innerWidth) 
+				winWidth = window.innerWidth; 
+			else if ((document.body) && (document.body.clientWidth)) 
+				winWidth = document.body.clientWidth;
+
+			var bg = document.getElementById('main-bg');
+			bg.style.height = winHeight + 'px';
+			bg.style.width = winWidth + 'px';
+			window.onresize = setWH;
+		})();
+		console.log(winHeight);	
+	</script>
+
+</body>
+</html>
