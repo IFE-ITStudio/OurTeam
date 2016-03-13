@@ -1,12 +1,12 @@
 window.onload = function(){
 	var flying = setInterval("fly()",time);//调用fly();
-	var funny = function(i){//判断点击数组的序号，显示相应的介绍信息
+	var judgeIndex = function(i){//判断点击数组的序号，显示相应的介绍信息
         buttons[i].onclick = function(){
         	showInformation(i);
             }
     }
 	for(var i=0;i<buttons.length;i++){
-        funny(i);
+        judgeIndex(i);
     }
 }
 
@@ -21,6 +21,7 @@ function fly(){
 		planes.style.left = planes.offsetLeft -1 +"px";
 	}
 }
+//getElementsByClassName
 function getElementsByClassName(tagName,className) {  
     var tag = document.getElementsByTagName(tagName);  
     var tagAll = [];  
