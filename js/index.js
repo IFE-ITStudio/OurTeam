@@ -1,12 +1,12 @@
 window.onload = function(){
 	var flying = setInterval("fly()",time);//调用fly();
-	var judgeIndex = function(i){//判断点击数组的序号，显示相应的介绍信息
+	var funny = function(i){//判断点击数组的序号，显示相应的介绍信息
         buttons[i].onclick = function(){
         	showInformation(i);
-            }
+        }
     }
 	for(var i=0;i<buttons.length;i++){
-        judgeIndex(i);
+        funny(i);
     }
 }
 
@@ -21,7 +21,6 @@ function fly(){
 		planes.style.left = planes.offsetLeft -1 +"px";
 	}
 }
-//getElementsByClassName
 function getElementsByClassName(tagName,className) {  
     var tag = document.getElementsByTagName(tagName);  
     var tagAll = [];  
@@ -33,9 +32,10 @@ function getElementsByClassName(tagName,className) {
     return tagAll;     
 }
 //information 	
-var buttons = getElementsByClassName("div","avatar");
-var textareas = getElementsByClassName("div","textarea");
+var buttons = getElementsByClassName("li","avatar-click");
+var textareas = getElementsByClassName("li","textarea");
 function showInformation(i){
+	// console.log(textareas[i].innerHTML)
 	if(textareas[i].style.display == "block"){
 		textareas[i].style.display = "none";
 	}

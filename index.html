@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IFE-ITStudio</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="main-bg">
+		<div class="info-contain">
+			<!--个人名片-->
+			<ul class="info-person">
+				<li class="textarea" style="display: block">
+					<img src="images/hj.png" alt="何珺">
+					<img src="images/photo2-hj.png" alt="">
+					<img src="images/photo1-hj.png" alt="">
+				</li>
+				<li class="center textarea" style="display: none;">
+					<img src="images/zzw.png" alt="">
+					<img src="images/photo2-zzw.png" alt="">
+					<img src="images/photo1-zzw.png" alt="">
+				</li>
+				<li class="textarea" style="display: none;">
+					<img src="images/lzk.png" alt="">
+					<img src="images/photo2-lzk.png" alt="">
+					<img src="images/photo1-lzk.png" alt="">
+				</li>
+			</ul>
+		</div>
+		<div class="menu">
+			<!--菜单-->
+			<div class="line-menu" id="list-menu"></div>
+			<ul class="avatar-list" id="avatar-list">
+				<li><img src="images/logo-it.png" alt="avatar"></li>
+				<li class="avatar-click"><img src="images/avatar.jpg" alt="avatar"></li>
+				<li class="avatar-click"><img src="images/avatar.jpg" alt="avatar"></li>
+				<li class="avatar-click"><img src="images/avatar.jpg" alt="avatar"></li>
+			</ul>
+		</div>
+		<div class="screen-head">
+			<img src="images/left-team.png" alt="IFE-ITStudio">
+		</div>
+		<div class="plane" id="plane">
+			<img src="images/plane1.gif" alt="A small plane">
+		</div>
+		<div class="cookie">
+			<img src="images/cookie.png" alt="cookie">
+		</div>
+<!-- 		<div class="book">
+			<img src="images/book.png" alt="book">
+		</div> -->
+<!-- 		<div class="camera">
+			<img src="images/camera.png" alt="camera">
+		</div> -->
+		<div class="glasses">
+			<img src="images/glasses.png" alt="glasses">
+		</div>
+		<div class="brushes">
+			<img src="images/brushes.png" alt="brushes">
+		</div>
+		<div class="plane-paper">
+			<img src="images/plane-paper.png" alt="plane-paper">
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="js/index.js"></script>
+	<script>
+		(function setWH(){
+			if (window.innerHeight) 
+				winHeight = window.innerHeight; 
+			else if ((document.body) && (document.body.clientHeight)) 
+				winHeight = document.body.clientHeight; 
+
+			if (window.innerWidth) 
+				winWidth = window.innerWidth; 
+			else if ((document.body) && (document.body.clientWidth)) 
+				winWidth = document.body.clientWidth;
+
+			var bg = document.getElementById('main-bg');	//container
+			var lineMenu = document.getElementById('list-menu');	//获取menu下的黄色线
+			var avatarList = document.getElementById('avatar-list');	//获取menu中的人物头像
+
+			/*以下为: 在窗口width>1000 && height>540 的情况下无滚动条的出现*/
+			if(winWidth>1000 && winHeight>540) {
+				bg.style.width = winWidth + 'px';
+				bg.style.height = winHeight + 'px';
+			} else if(winWidth>1000 && winHeight<540) {
+				bg.style.width = winWidth + 'px';
+				bg.style.height = 540 + 'px';
+			} else if(winWidth<1000 && winHeight>540) {
+				bg.style.width = 1000 + 'px';
+				bg.style.height = winHeight + 'px';
+			} else {
+				bg.style.width = 1000 + 'px';
+				bg.style.height = 540 + 'px';
+			}
+
+			if(winWidth>1000) {
+				/*控制menu下黄色线的宽度*/
+				lineMenu.style.width = (winWidth-avatarList.offsetLeft) -10 + 'px';
+			} else {
+				lineMenu.style.width = 920 + 'px';
+			}
+			window.onresize = setWH;
+		})();
+	</script>
+
+</body>
+</html>
